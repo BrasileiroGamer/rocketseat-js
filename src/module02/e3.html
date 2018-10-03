@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS Learning</title>
+	</head>
+	<body>
+        <div id="namelist"></div>
+
+		<script>
+            var names = ["Diego", "Gabriel", "Lucas"];
+			var namelist = document.getElementById('namelist');
+
+            for (name of names) {
+                var li = document.createElement('li');
+                var text = document.createTextNode(name);
+
+                li.appendChild(text);
+                namelist.appendChild(li);
+            }
+		</script>
+	</body>
+</html>

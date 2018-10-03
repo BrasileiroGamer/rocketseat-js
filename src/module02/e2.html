@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS Learning</title>
+	</head>
+	<body>
+        <button id="button">Enviar</button>
+        <div id="squares"></div>
+
+		<script>
+			var button = document.getElementById('button');
+            var squares = document.getElementById('squares');
+
+            button.onclick = function() {
+                var square = document.createElement('div');
+                square.style.width = 100;
+                square.style.height = 100;
+                square.style.backgroundColor = '#f00';
+
+                square.onmouseover = function() {
+                    square.style.backgroundColor = getRandomColor();
+                }
+
+                squares.appendChild(square);
+            }
+
+            function getRandomColor() {
+                var color = "#";
+                var letters = "0123456789ABCDEF";
+
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+
+                return color;
+            }
+		</script>
+	</body>
+</html>

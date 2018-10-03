@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS Learning</title>
+	</head>
+	<body>
+        <input id="input" type="text" placeholder="Input a name">
+        <button onclick="addName()">Adicionar</button>
+        <div id="list"></div>
+
+		<script>
+            var names = ["Diego", "Gabriel", "Lucas"];
+            var input = document.getElementById('input');
+			var list = document.getElementById('list');
+
+            for (name of names) {
+                add(name);
+            }
+
+            function add(name) {
+                var li = document.createElement('li');
+                var text = document.createTextNode(name);
+
+                li.appendChild(text);
+                list.appendChild(li);
+            }
+
+            function addName() {
+                if (input.value.trim() != '') {
+                    add(input.value);
+                    input.value = '';
+                } else {
+                    alert('Preencha o campo!');
+                }
+            }
+		</script>
+	</body>
+</html>
